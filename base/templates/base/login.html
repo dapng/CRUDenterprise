@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Вход</h1>
+    <a href="{% url 'about' %}">Подробнее</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Войти">
+    </form>
+    <p>У вас нет учетной записи? <a href="{% url 'register' %}">Регистрация</a></p>
+</div>
+
+
+
+
+
+
+{% endblock content %}
